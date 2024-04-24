@@ -30,5 +30,6 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
   res.header("Access-Control-Allow-Origin", "https://hostel-management-front.vercel.app");
   res.header("Access-Control-Allow-Credentials", true);
+  res.header("Set-Cookie", "name=value; SameSite=None; Secure");
   res.send('<h1>HOMEPAGE</h1>');
 });
