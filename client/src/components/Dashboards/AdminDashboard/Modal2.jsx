@@ -45,7 +45,7 @@ function Modal2({ closeModal, student }) {
           dob: dob,
           aadhar: aadhar,
         };
-    const res = await fetch("http://localhost:3000/api/student/update-student", {
+    const res = await fetch("https://hostel-management-seven.vercel.app/api/student/update-student", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

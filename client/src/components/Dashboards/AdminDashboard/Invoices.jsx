@@ -8,7 +8,7 @@ function Invoices() {
     setProgress(30)
     let hostel = JSON.parse(localStorage.getItem("hostel"));
     try {
-      const res = await fetch("http://localhost:3000/api/invoice/generate", {
+      const res = await fetch("https://hostel-management-seven.vercel.app/api/invoice/generate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -64,7 +64,7 @@ function Invoices() {
   const approveInvoice = async (id) => {
     setProgress(30);
     try {
-      const res = await fetch("http://localhost:3000/api/invoice/update", {
+      const res = await fetch("https://hostel-management-seven.vercel.app/api/invoice/update", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -120,7 +120,7 @@ function Invoices() {
     setProgress(30);
     let hostel = JSON.parse(localStorage.getItem("hostel"));
     try {
-      const res = await fetch("http://localhost:3000/api/invoice/getbyid", {
+      const res = await fetch("https://hostel-management-seven.vercel.app/api/invoice/getbyid", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

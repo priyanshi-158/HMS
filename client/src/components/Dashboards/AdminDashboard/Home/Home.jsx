@@ -21,7 +21,7 @@ function Home() {
   const getRequests = async () => {
     
     console.log(hostel);
-    const res = await fetch("http://localhost:3000/api/leave/list", {
+    const res = await fetch("https://hostel-management-seven.vercel.app/api/leave/list", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,7 +37,7 @@ function Home() {
   const getsuggestions = async () => {
     
     console.log(hostel);
-    const res = await fetch("http://localhost:3000/api/suggestion/hostel", {
+    const res = await fetch("https://hostel-management-seven.vercel.app/api/suggestion/hostel", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

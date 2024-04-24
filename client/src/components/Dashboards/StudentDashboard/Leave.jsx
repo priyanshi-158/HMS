@@ -15,7 +15,7 @@ function Leave() {
       return_date: returnDate,
     };
 
-    let response = await fetch("http://localhost:3000/api/leave/request", {
+    let response = await fetch("https://hostel-management-seven.vercel.app/api/leave/request", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -95,7 +95,7 @@ function Leave() {
     let student = JSON.parse(localStorage.getItem("student"));
     setLoading(true);
     if (student) {
-      fetch("http://localhost:3000/api/leave/count", {
+      fetch("https://hostel-management-seven.vercel.app/api/leave/count", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

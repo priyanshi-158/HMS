@@ -31,7 +31,7 @@ export default function SignIn() {
   const getHostel = async () => {
     let warden = JSON.parse(localStorage.getItem("warden"));
     try {
-      const res = await fetch("http://localhost:3000/api/warden/get-hostel", {
+      const res = await fetch("https://hostel-management-seven.vercel.app/api/warden/get-hostel", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -54,7 +54,7 @@ export default function SignIn() {
       password: pass,
     };
 
-    let response = await fetch("http://localhost:3000/api/auth/login", {
+    let response = await fetch("https://hostel-management-seven.vercel.app/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -69,7 +69,7 @@ export default function SignIn() {
       localStorage.setItem("user", JSON.stringify(result.data.user));
       if(result.data.user.isAdmin==='student')
       {
-        let student = await fetch("http://localhost:3000/api/student/get-student", {
+        let student = await fetch("https://hostel-management-seven.vercel.app/api/student/get-student", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -90,7 +90,7 @@ export default function SignIn() {
       }
       else if(result.data.user.isAdmin==='warden')
       {
-        let warden = await fetch("http://localhost:3000/api/warden/get-warden", {
+        let warden = await fetch("https://hostel-management-seven.vercel.app/api/warden/get-warden", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

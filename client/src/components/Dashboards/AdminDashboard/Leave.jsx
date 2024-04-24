@@ -9,7 +9,7 @@ function Leave() {
     setProgress(30);
     const hostel = JSON.parse(localStorage.getItem("hostel"));
     console.log(hostel);
-    const res = await fetch("http://localhost:3000/api/leave/list", {
+    const res = await fetch("https://hostel-management-seven.vercel.app/api/leave/list", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +45,7 @@ function Leave() {
   };
 
   const updateRequest = async (id, status) => {
-    const res = await fetch("http://localhost:3000/api/leave/update", {
+    const res = await fetch("https://hostel-management-seven.vercel.app/api/leave/update", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

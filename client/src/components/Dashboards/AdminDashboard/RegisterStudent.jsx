@@ -28,7 +28,7 @@ function RegisterStudent() {
         password: password,
         token:token
       };
-      const res = await fetch("http://localhost:3000/api/student/register-student", {
+      const res = await fetch("https://hostel-management-seven.vercel.app/api/student/register-student", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

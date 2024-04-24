@@ -28,7 +28,7 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 app.get("/", (req, res) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
   res.header("Access-Control-Allow-Credentials", true);
   res.send('<h1>HOMEPAGE</h1>');
 });

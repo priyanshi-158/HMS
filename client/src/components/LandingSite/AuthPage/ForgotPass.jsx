@@ -12,7 +12,7 @@ function ForgotPassword ({  handleClose }){
   const [email, setemail] = useState("");
 const forgotpassword=async ()=>{
   try{
-    const res=await fetch("http://localhost:3000/api/auth/forgot-password",{
+    const res=await fetch("https://hostel-management-seven.vercel.app/api/auth/forgot-password",{
       method:"POST",
       headers: {
         "Content-Type": "application/json",
