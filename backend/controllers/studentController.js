@@ -5,11 +5,9 @@ const bcrypt = require('bcryptjs');
 const Parser = require('json2csv').Parser;
 
 const registerStudent = async (req, res) => {
-    // console.log(req.body);
     let success = false;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        // console.log(errors);
         return res.status(400).json({success, errors: errors.array() });
     }
 
@@ -69,18 +67,15 @@ const registerStudent = async (req, res) => {
         success = true;
         res.json({success, student });
     } catch (err) {
-        console.log(err);
         res.status(500).json({success, errors: 'Server error'});
     }
 }
 
 const getStudent = async (req, res) => {
     try {
-        // console.log(req.body);
         let success = false;
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            // console.log(errors);
             return res.status(400).json({success, errors: errors.array() });
         }
 
@@ -103,7 +98,6 @@ const getStudent = async (req, res) => {
         success = true;
         res.json({success, student });
     } catch (err) {
-        console.log(err);
         res.status(500).json({success, errors: 'Server error'});
     }
 }
@@ -113,7 +107,6 @@ const getAllStudents = async (req, res) => {
     let success = false;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        // console.log(errors);
         return res.status(400).json({success, errors: errors.array() });
     }
 
@@ -129,7 +122,6 @@ const getAllStudents = async (req, res) => {
         res.json({success, students});
     }
     catch (err) {
-        console.log(err);
         res.status(500).json({success, errors: [{msg: 'Server error'}]});
     }
 }
@@ -162,18 +154,15 @@ const updateStudent = async (req, res) => {
         success = true;
         res.json({success, student});
     } catch (err) {
-        console.log(err);
         res.status(500).json({success, errors: [{msg: 'Server error'}]});
     }
 }
 
 const deleteStudent = async (req, res) => {
     try {
-        // console.log(req.body);
         let success = false;
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            // console.log(errors);
             return res.status(400).json({success, errors: errors.array() });
         }
 
@@ -192,7 +181,6 @@ const deleteStudent = async (req, res) => {
         success = true;
         res.json({success, msg: 'Student deleted successfully' });
     } catch (err) {
-        console.log(err);
         res.status(500).json({success, errors: [{msg: 'Server error'}]});
     }
 }
@@ -200,10 +188,8 @@ const deleteStudent = async (req, res) => {
 const csvStudent = async (req, res) => {
     let success = false;
     try {
-        // console.log(req.body);
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            // console.log(errors);
             return res.status(400).json({success, errors: errors.array() });
         }
 
@@ -231,7 +217,6 @@ const csvStudent = async (req, res) => {
         success = true;
         res.json({success, csv});
     } catch (err) {
-        console.log(err);
         res.status(500).json({success, errors: [{msg: 'Server error'}]});
     }
 }

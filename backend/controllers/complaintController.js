@@ -23,7 +23,6 @@ exports.registerComplaint = async (req, res) => {
         success = true;
         res.json({ success, msg: 'Complaint registered successfully' });
     } catch (err) {
-        console.error(err.message);
         res.status(500).send('Server error');
     }
 }
@@ -44,7 +43,6 @@ exports.getbyhostel = async (req, res) => {
         res.json({ success, complaints });
     }
     catch (err) {
-        console.error(err.message);
         res.status(500).send('Server error');
     }
 }
@@ -65,7 +63,6 @@ exports.getbystudent = async (req, res) => {
         res.json({ success, complaints });
     }
     catch (err) {
-        console.error(err.errors);
         res.status(500).send('Server error');
     }
 }
@@ -88,7 +85,6 @@ exports.resolve = async (req, res) => {
         res.json({ success });
     }
     catch (err) {
-        console.error(err.message);
         res.status(500).send('Server error');
     }
 }

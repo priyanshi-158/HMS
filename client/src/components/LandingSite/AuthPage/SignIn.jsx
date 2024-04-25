@@ -23,9 +23,9 @@ export default function SignIn() {
 
   const handleOpen = () => {
    
-    console.log("in",open)
+
     setOpen(true);
-    console.log("la",open)
+
 };
 
   const getHostel = async () => {
@@ -40,7 +40,6 @@ export default function SignIn() {
       });
 
       const data = await res.json();
-      console.log(data);
       localStorage.setItem("hostel", JSON.stringify(data.hostel));
     } catch (err) {
       console.log(err);
@@ -80,7 +79,6 @@ export default function SignIn() {
       });
 
       let studentResult = await student.json();
-      console.log(studentResult);
       if (studentResult.success) {
         localStorage.setItem("student", JSON.stringify(studentResult.student));
         navigate("/student-dashboard");
@@ -102,7 +100,6 @@ export default function SignIn() {
       });
 
       let wardenResult = await warden.json();
-      console.log(wardenResult);
       if (wardenResult.success) {
         localStorage.setItem("warden", JSON.stringify(wardenResult.warden));
         const hostel = await getHostel();

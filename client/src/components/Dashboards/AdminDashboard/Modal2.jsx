@@ -11,7 +11,6 @@ Modal2.propTypes = {
 };
 
 function Modal2({ closeModal, student }) {
-    console.log(student.dob)
   const hostel = JSON.parse(localStorage.getItem("hostel")).name;
   const [roll, setRoll] = useState(student.roll_no);
   const [name, setName] = useState(student.name);
@@ -93,7 +92,6 @@ function Modal2({ closeModal, student }) {
           setLoading(false);
     }
 }catch (err) {
-    console.log(err);
     toast.error(
       err, {
       position: "top-right",

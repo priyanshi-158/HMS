@@ -18,9 +18,6 @@ function Attendance() {
     setProgress(40);
     const markedData = await marked.json();
     setProgress(50)
-    if (markedData.success) {
-      console.log("Attendance: ", markedData.attendance);
-    }
     const markedStudentsdata = markedData.attendance.map((student) => {
       return {
         id: student.student._id,
@@ -75,7 +72,7 @@ function Attendance() {
     }
 
     const marked=unmarkedStudents.filter((student) => student._id === id)
-      console.log(marked)
+
       const obj={
         id: marked[0]._id,
         roll: marked[0].roll_no,
@@ -83,7 +80,7 @@ function Attendance() {
         room: marked[0].room_no,
         attendance:  isPresent ? true : false,
       }
-      console.log(obj)
+
     setunmarkedStudents(
       unmarkedStudents.filter((student) => student._id !== id)
     );
@@ -97,12 +94,11 @@ function Attendance() {
 
   useEffect(() => {
     getALL();
-    console.log("State: ", unmarkedStudents);
-    console.log("Marked: ", markedStudents);
+
     setPresent(
       markedStudents.filter((student) => student.attendance === true).length
     );
-    console.log("Present: ", present);
+
   }, [unmarkedStudents.length, markedStudents.length]);
 
   let date = new Date();

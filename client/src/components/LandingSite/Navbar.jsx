@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const mobileMenuStyles = `flex-col absolute top-0 left-0 w-full h-full bg-gray px-10 bg-black py-40 text-5xl font-bold`;
 
-  console.log(window.innerWidth,"innerwidth");
 
   return (
     <nav className="flex align-center justify-between md:p-10 p-7 text-white md:px-20">

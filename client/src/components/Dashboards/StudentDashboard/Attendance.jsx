@@ -27,7 +27,6 @@ function Attendance() {
         });
         setDaysOff(daysOff);
         setThisWeek(thisWeek);
-        console.log(daysOff, thisWeek);
       }
       else{
         console.log("Error");

@@ -27,12 +27,10 @@ const forgotpassword=async ()=>{
     console.log(err)
   }
 }
-  async function handlesubmit(e) {
-    console.log("running")
+  async function handlesubmit() {
     try {
       if (email !== "") {
         const res = await forgotpassword();
-        console.log(res)
         if (res.success) {
           toast.success(res.message, {
             position: "bottom-right",

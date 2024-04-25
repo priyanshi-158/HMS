@@ -49,7 +49,6 @@ const addHostel=async (req,res)=>{
         }
     }
     catch (err) {
-        console.log(err);
         res.status(500).json({success, errors: [{msg: 'Server error'}]});
     }
 }
@@ -98,7 +97,6 @@ const updateHostel =async (req,res)=>{
         }
     }
     catch (err) {
-        console.log(err);
         res.status(500).json({success, errors: [{msg: 'Server error'}]});
     }
 }

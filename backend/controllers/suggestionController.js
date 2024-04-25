@@ -22,7 +22,6 @@ exports.registerSuggestion = async (req, res) => {
         success = true;
         res.json({ success, msg: 'Suggestion registered successfully' });
     } catch (err) {
-        console.error(err.message);
         res.status(500).send('Server error');
     }
 }
@@ -43,7 +42,6 @@ exports.getbyhostel = async (req, res) => {
         res.json({ success, suggestions });
     }
     catch (err) {
-        console.error(err.message);
         res.status(500).send('Server error');
     }
 }
@@ -64,7 +62,6 @@ exports.getbystudent = async (req, res) => {
         res.json({ success, suggestions });
     }
     catch (err) {
-        console.error(err.message);
         res.status(500).send('Server error');
     }
 }
@@ -81,7 +78,6 @@ exports.updateSuggestion = async (req, res) => {
         res.json({ success, msg: 'Suggestion updated successfully' });
     }
     catch (err) {
-        console.error(err.message);
         res.status(500).send('Server error');
     }
 }

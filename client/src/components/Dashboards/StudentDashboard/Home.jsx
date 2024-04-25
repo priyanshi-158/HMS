@@ -17,7 +17,6 @@ const List = () => {
         if (data.success) {
           let invoices = data.invoices;
           let list = [];
-          console.log(invoices)
           invoices.forEach((invoice) => {
               let date = new Date(invoice.date);
               invoice.date = date.toLocaleDateString("en-US", {
@@ -37,7 +36,6 @@ const List = () => {
         }
       });
   }, [invoiceList.length]);
-console.log(invoiceList)
   return (
     <div className="w-full max-w-md p-4 rounded-lg shadow sm:p-8 bg-neutral-950 drop-shadow-xl overflow-y-auto max-h-70">
       <div className="flex items-center justify-between mb-4">
@@ -124,7 +122,6 @@ function Home() {
         }
       });
       setDaysOff(daysOff);
-      console.log(daysOff);
     } else {
       console.log("Error");
     }

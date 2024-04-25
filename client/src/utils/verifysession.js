@@ -9,7 +9,6 @@ const verifysession = async () => {
 
     let result = await response.json();
     if (result.success) {
-      console.log(result.data.isAdmin);
       if (result.data.isAdmin==='warden') {
         window.location.href = "/warden-dashboard";
       } else {
@@ -19,6 +18,7 @@ const verifysession = async () => {
     else {
       localStorage.removeItem("token");
       localStorage.removeItem("student");
+      localStorage.removeItem("warden");
     }
   };
 

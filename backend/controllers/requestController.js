@@ -18,7 +18,6 @@ const register = async (req, res) => {
         await newRequest.save();
         res.json(newRequest);
     } catch(err) {
-        console.error(err.message);
         res.status(500).send('Server error');
     }
 }
@@ -28,7 +27,6 @@ const getAll = async (req, res) => {
         const requests = await Request.find();
         res.json(requests);
     } catch(err) {
-        console.error(err.message);
         res.status(500).send('Server error');
     }
 }

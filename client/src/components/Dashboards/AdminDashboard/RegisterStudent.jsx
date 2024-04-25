@@ -64,7 +64,6 @@ function RegisterStudent() {
         setPassword("");
         setLoading(false);
       } else {
-        // console.log(roll);
         data.errors.forEach((err) => {
           toast.error(
             err.msg, {
@@ -79,7 +78,6 @@ function RegisterStudent() {
 
       }
     } catch (err) {
-      console.log(err);
       toast.error(
         err, {
         position: "top-right",

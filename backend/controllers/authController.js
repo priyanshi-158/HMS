@@ -45,7 +45,7 @@ exports.login = async (req, res, next) => {
 
         }
         catch (err) {
-            console.error(err.message);
+
             res.status(500).send('Server error');
         }
     } catch (error) {
@@ -87,7 +87,6 @@ exports.changePassword = async (req, res, next) => {
 
         }
         catch (err) {
-            console.error(err.message);
             res.status(500).send('Server error');
         }
     } catch (error) {
@@ -110,7 +109,6 @@ exports.verifySession = async (req, res, next) => {
         }
         return res.status(400).json({success, "message": "Invalid token"});
     } catch (err) {
-        console.error(err.message);
         return res.status(500).json({success, "message": "Server Error"});
     }
 }
@@ -122,7 +120,6 @@ exports.verifySession = async (req, res, next) => {
 
 exports.forgotpass = async (req, res) => {
   const { email } = req.body;
-  console.log(email)
   try {
     const oldUser = await User.findOne({ email });
     if (!oldUser) {
@@ -147,7 +144,6 @@ exports.forgotpass = async (req, res) => {
       subject: "Password Reset",
       text: link,
     });
-    console.log(info);
     return res.json({
       success: true,
       message: "Check Your Email for reset link",
@@ -159,7 +155,6 @@ exports.forgotpass = async (req, res) => {
 
 exports.resetpassword = async (req, res) => {
   const { id, token } = req.params;
-  console.log(req.params);
   const oldUser = await User.findOne({ _id: id });
   if (!oldUser) {
     return res.json({ status: "User Not Exists!!" });
@@ -169,7 +164,6 @@ exports.resetpassword = async (req, res) => {
     const verify = jwt.verify(token, secret);
     res.render("index", { email: verify.email, status: "Not Verified" });
   } catch (error) {
-    console.log(error);
     res.send("Not Verified");
   }
 };
@@ -177,7 +171,6 @@ exports.resetpassword = async (req, res) => {
 exports.resetPass = async (req, res) => {
   const { id, token } = req.params;
   const { password } = req.body;
-  console.log(password);
   const oldUser = await User.findOne({ _id: id });
   if (!oldUser) {
     return res.json({ status: "User Not Exists!!" });
@@ -199,7 +192,6 @@ exports.resetPass = async (req, res) => {
 
     res.render("index", { email: verify.email, status: "verified" });
   } catch (error) {
-    console.log(error);
     res.json({ status: "Something Went Wrong" });
   }
 };

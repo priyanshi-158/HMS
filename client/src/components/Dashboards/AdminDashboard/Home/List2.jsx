@@ -9,7 +9,6 @@ List2.propTypes = {
 };
 
 function List2({ list, title, icon, addClasses }) {
-  console.log(list)
   return (
     <div
       className={`bg-neutral-950 px-7 py-5 rounded-xl shadow-xl w-full md:max-w-[350px] max-h-96 overflow-auto ${addClasses}`}

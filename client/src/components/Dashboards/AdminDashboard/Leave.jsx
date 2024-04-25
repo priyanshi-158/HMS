@@ -8,7 +8,6 @@ function Leave() {
   const getRequests = async () => {
     setProgress(30);
     const hostel = JSON.parse(localStorage.getItem("hostel"));
-    console.log(hostel);
     const res = await fetch("https://hostel-management-seven.vercel.app/api/leave/list", {
       method: "POST",
       headers: {
@@ -19,7 +18,6 @@ function Leave() {
     setProgress(40);
     const data = await res.json();
     setProgress(60)
-    console.log(data);
     if (data.success) {
       data.list.map((req) => {
         req.id = req._id;
@@ -53,7 +51,6 @@ function Leave() {
       body: JSON.stringify({ id, status }),
     });
     const data = await res.json();
-    console.log(data);
     if (data.success) {
       let student = newReqs.find((req) => req.id === id).student;
       toast.success(

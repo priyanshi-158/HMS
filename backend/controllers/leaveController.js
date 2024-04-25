@@ -13,7 +13,6 @@ exports.requestLeave = async (req, res) => {
     }
     const { student, leaving_date, return_date } = req.body;
     const today = new Date();
-    console.log(leaving_date);
     if (new Date(leaving_date) > new Date(return_date)) {
         return res.status(400).json({success, "message": "Leaving date cannot be greater than return date"});
     }
@@ -30,7 +29,6 @@ exports.requestLeave = async (req, res) => {
         success = true;
         return res.status(200).json({success, "message": "Leave request sent successfully"});
     } catch (err) {
-        console.error(err.message);
         return res.status(500).json({success, "message": "Server Error"});
     }
 }
@@ -61,7 +59,6 @@ exports.countLeave = async (req, res) => {
         return res.status(200).json({success, list, approved});
     }
     catch (err) {
-        console.error(err.message);
         return res.status(500).json({success, "message": "Server Error"});
     }
 }
@@ -85,7 +82,6 @@ exports.listLeave = async (req, res) => {
         return res.status(200).json({success, list, approved, rejected});
     }
     catch (err) {
-        // console.error(err.message);
         return res.status(500).json({success, errors: [{msg: "Server Error"}]});
     }
 }
@@ -106,7 +102,6 @@ exports.updateLeave = async (req, res) => {
         return res.status(200).json({success, leave});
     }
     catch (err) {
-        console.error(err.message);
         return res.status(500).json({success, errors: [{msg: "Server Error"}]});
     }
 }

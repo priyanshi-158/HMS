@@ -29,9 +29,6 @@ function Invoices() {
             } else {
               pendingInvoices += 1;
             }
-            console.log(invoices)
-            console.log(paidInvoices)
-            console.log(pendingInvoices)
             let date = new Date(invoice.date);
             invoice.date= date.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
             List.push(

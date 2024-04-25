@@ -27,7 +27,6 @@ function Contact() {
         setMessage("");
       })
       .catch((error) => {
-        console.error('Error sending email:', error);
         setIsSending(false);
       });
   };

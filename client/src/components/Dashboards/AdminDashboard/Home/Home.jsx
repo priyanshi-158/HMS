@@ -20,7 +20,6 @@ function Home() {
 
   const getRequests = async () => {
     
-    console.log(hostel);
     const res = await fetch("https://hostel-management-seven.vercel.app/api/leave/list", {
       method: "POST",
       headers: {
@@ -36,7 +35,6 @@ function Home() {
   };
   const getsuggestions = async () => {
     
-    console.log(hostel);
     const res = await fetch("https://hostel-management-seven.vercel.app/api/suggestion/hostel", {
       method: "POST",
       headers: {
@@ -66,7 +64,6 @@ function Home() {
   }, [])
 
   const [leaveReqs, setLeaveReqs] = useState([]);
-  console.log(leaveReqs)
   const [suggestions, setSuggestions] = useState([]);
 
   const messIcon = (
