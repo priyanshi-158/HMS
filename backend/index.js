@@ -24,7 +24,6 @@ app.use('/api/warden', require('./routes/wardenRoutes'));
 app.use('/api/complaint', require('./routes/complaintRoutes'));
 app.use('/api/invoice', require('./routes/invoiceRoutes'));
 app.use('/api/leave', require('./routes/leaveRoutes'));
-app.use('/api/request', require('./routes/requestRoutes'));
 app.use('/api/attendance', require('./routes/attendanceRoutes'));
 app.use('/api/suggestion', require('./routes/suggestionRoutes'));
 app.use('/api/hostel',require('./routes/hostelRoutes'));

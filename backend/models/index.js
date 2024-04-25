@@ -7,7 +7,6 @@ const Complaint = require('./Complaint');
 const Leave = require('./Leave');
 const Suggestion = require('./Suggestion');
 const Invoice = require('./Invoice');
-const Request = require('./Request');
 
 module.exports = {
     Warden,
@@ -19,5 +18,4 @@ module.exports = {
     Leave,
     Suggestion,
     Invoice,
-    Request
 }

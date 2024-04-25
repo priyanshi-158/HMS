@@ -54,9 +54,9 @@ const forgotpassword=async ()=>{
   }
   return (
     <div className="fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[100%] max-h-full flex items-center justify-center bg-black bg-opacity-75">
-    <div className="relative w-full max-h-full ">
+    <div className="relative w-full max-h-full flex justify-center items-center">
       {/* Modal content */}
-      <div className="relative w-full rounded-lg shadow bg-gray-700">
+      <div className="relative w-full md:w-[60%] rounded-lg shadow bg-gray-700">
         {/* Modal header */}
         <div className="flex w-full items-center justify-center p-4 border-b rounded-t border-gray-600">
           <h3 className="text-xl font-semibold text-white">
@@ -84,28 +84,24 @@ const forgotpassword=async ()=>{
         </div>
         {/* Modal body */}
         <div className=" w-full p-10 rounded-lg mb-10 overflow-auto">
-      <div className="flex flex-col gap-3">
-        <div className="flex gap-5 w-full flex-wrap justify-center">
-          <Input
-            field={{
-              name: "email",
-              placeholder: "Student Email",
-              type: "email",
-              req: true,
-              value: email,
-              onChange: (e) => setemail(e.target.value),
-            }}
-          />
+      <div className="flex flex-col gap-3 justify-center items-center">
+        <div className="flex gap-5 w-full md:w-[50%] flex-wrap justify-center items-center">
+       
+            <label htmlFor="email" className="block mb-2 text-sm font-medium text-white">Your Email</label>
+            <input type="email" name="email" id="email" className="border sm:text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-[#9F6BA0] focus:border-[#9F6BA0] outline-none" placeholder="Enter your email" required={true} value={email} onChange={(e) => setemail(e.target.value)} />
           
         </div>
        
         
-        <div className="mt-5" onClick={handlesubmit}>
-          <Button >
+        <div className="mt-5 flex justify-center items-center" >
+        <button
+      type="submit"
+      onClick={handlesubmit}
+      className=" text-white hover:bg-[#825882] focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-[#9F6BA0] focus:ring-[#825882]"
+    >
             
               <span>Submit</span>
-           
-          </Button>
+           </button>
           <ToastContainer
             position="top-right"
             autoClose={3000}

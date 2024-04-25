@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 function Contact() {
@@ -26,7 +26,7 @@ function Contact() {
         setSubject("");
         setMessage("");
       })
-      .catch((error) => {
+      .catch(() => {
         setIsSending(false);
       });
   };

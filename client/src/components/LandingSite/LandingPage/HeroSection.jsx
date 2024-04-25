@@ -1,4 +1,4 @@
-import { HeroSVG } from "./HeroSVG";
+
 import { Link } from "react-router-dom";
 import heroImg from "../../../assets/home.png"
 function HeroSection() {
@@ -23,13 +23,6 @@ function HeroSection() {
           >
             Login
           </Link>
-          {/* <p className="mt-6 mb-3">OR</p>
-          <Link
-            to="/auth/request"
-            className="text-xl hover:underline hover:text-blue-500"
-          >
-            Request Registration
-          </Link> */}
         </div>
       </div>
     </main>
