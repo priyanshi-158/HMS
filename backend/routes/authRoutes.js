@@ -28,5 +28,5 @@ router.post('/verifysession', [
 ], verifySession);
 router.post("/forgot-password", forgotpass);
 router.get("/reset-password/:id/:token", resetpassword);
-router.post("/reset-password/:id/:token", resetPass);
+router.post("/reset-password/:id/:token", resetPass);
 module.exports = router;
